@@ -10,12 +10,14 @@
                 <p><strong class="infoType">Directed by:</strong> {{movie.director}}</p>
                 <p><strong class="infoType">Cast:</strong> {{movie.cast}}</p>
                 <p><strong class="infoType">Screenplay by:</strong> {{movie.writers}}</p>
-            </div>
-    
+
                 <button type="button" [hidden]="!isCreator" class="btn btn-primary button-distance"(click)="editMovieHandler()">Edit</button>
                 <button type="button" [hidden]="!isCreator" class="btn btn-danger button-distance" (click)="deleteMovieHandler()">Delete</button>
                 <button type="button" [hidden]="isCreator || isFan" class="btn btn-warning" (click)="likeMovieHandler()">Like</button>
                 <button type="button" [hidden]="isCreator || !isFan" class="btn btn-secondary" (click)="dislikeMovieHandler()">Dislike</button>
+            </div>
+    
+                
         </div>
         <div class="col-6">
             <img class="details-img"
