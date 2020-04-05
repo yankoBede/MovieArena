@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from 'src/app/shared/user.service';
+import { IMovie } from 'src/app/shared/interfaces/movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  get isLogged() { return this.userService.isLogged; }
+  @Input() movies: IMovie[] | IMovie; 
+
+  constructor(
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
+     
   }
 
+  selectMovieHandler(movie) {
+    this.router.navigate([`/movie/detail/${movie._id}`]);
+  }
 }
