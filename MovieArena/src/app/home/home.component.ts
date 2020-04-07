@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   get isLogged() { return this.userService.isLogged; }
   topMovies: IMovie[] | IMovie;
+  get topMoviesCount() { return (this.topMovies as IMovie[]).length; }
 
   constructor(
     private userService: UserService,

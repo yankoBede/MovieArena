@@ -10,6 +10,7 @@ import { MovieService } from '../movie.service';
 export class AllMoviesComponent implements OnInit {
 
   allMovies: IMovie[] | IMovie;
+  get allMoviesCount() { return (this.allMovies as IMovie[]).length; }
 
   constructor(private movieService: MovieService) { }
 

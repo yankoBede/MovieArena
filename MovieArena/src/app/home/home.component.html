@@ -2,14 +2,19 @@
     <div style=" padding-left: 7%; padding-top: 1%; text-align: center;" class="col-md-11">
       <h1 class="center">Come and find all the movies <span class="text-highlighted"> you haven't known you want to watch!</span></h1>
     </div>
-    <img class="center" src="https://png.pngtree.com/thumb_back/fw800/background/20191029/pngtree-3d-blue-lighting-spotlight-stadium-arena-vector-background-image_320471.jpg">
+    <img class="center" src="https://www.ecopetit.cat/wpic/mpic/101-1019747_passeio-das-aguas-cinema.jpg">
 </div>
 
 
 <div *ngIf="isLogged">
-    <h1>Top 5 Most Popular Movies</h1>
-</div>
-<div *ngIf="isLogged">
+    <div *ngIf="topMoviesCount > 0">
+        <h1>Top 5 Most Popular Movies</h1>
+    </div>
+    <div *ngIf="topMoviesCount === 0">
+        <h1>There is no added movies yet</h1>
+        <h4><a routerLink="/movie/create">Be the first to add one</a></h4>
+    </div>
     <app-list [movies]="topMovies"></app-list>
 </div>
+
 

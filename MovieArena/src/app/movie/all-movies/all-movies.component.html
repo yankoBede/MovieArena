@@ -1,1 +1,6 @@
+<div *ngIf="allMoviesCount === 0">
+    <h1>There is no added movies yet</h1>
+    <h4><a routerLink="/movie/create">Be the first to add one</a></h4>
+</div>
+
 <app-list [movies]="allMovies"></app-list>

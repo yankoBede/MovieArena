@@ -8,3 +8,8 @@ h1 {
   padding-bottom: 10px;
   color: goldenrod;
 }
+
+img.center {
+  height: 50%;
+  width: 50%;
+}
